@@ -1,0 +1,25 @@
+CREATE DATABASE midterms;
+USE midterms;
+
+
+CREATE TABLE Student_info(
+student_id int PRIMARY KEY AUTO_INCREMENT,
+first_name varchar(15),
+last_name varchar(15),
+address varchar(55)
+);
+
+CREATE TABLE Program(
+student_course varchar(55) PRIMARY KEY,
+major varchar(55),
+subject_code int,
+subject_descrption varchar(55)
+);
+
+CREATE TABLE Grades(
+subject_code int PRIMARY KEY AUTO_INCREMENT,
+subject_description varchar(55),
+instructor varchar(15),
+grade int,
+remarks varchar(10)
+);
