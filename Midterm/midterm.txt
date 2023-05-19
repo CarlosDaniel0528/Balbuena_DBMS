@@ -1,0 +1,23 @@
+DROP DATABASE Midterm;
+CREATE DATABASE Midterm;
+USE Midterm;
+
+CREATE TABLE Student(
+	StudNo varchar (15),
+    StudFName varchar (15),
+    StudLName varchar (15),
+    Major varchar (15),
+    Gender ENUM ('F', 'M'),
+    HomeAddress varchar (15)
+);
+
+CREATE TABLE Grades(
+	StudNo varchar (15) PRIMARY KEY,
+    SubjectCode varchar(15),
+    Grade float
+);
+
+CREATE TABLE Subject(
+	SubjectCode varchar (15),
+    SubjectDescr varchar (15)
+);
