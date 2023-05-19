@@ -1,0 +1,40 @@
+CREATE DATABASE Midterm;
+USE Midterm;
+
+CREATE TABLE Student(
+StudNo varchar (15) PRIMARY KEY,
+    StudFName varchar (15),
+    StudLName varchar (15),
+    Major varchar (15),
+    Gender ENUM ('F', 'M'),
+    HomeAddress varchar (15)
+);
+
+CREATE TABLE Grade(
+StudNo varchar (15) PRIMARY KEY,
+    SubjectCode varchar(15),
+    Grade int
+);
+
+CREATE TABLE Subject(
+SubjectCode varchar (15),
+    SubjectDescr varchar (15)
+);
+
+
+INSERT INTO Student VALUES
+("S-101", "Ana", "Cruz","ECE", "F", "Malolos, Bulacan"),
+("S-102", "Hazel", "Ponce", "COE", "F", "Plaridel, Bataan"),
+("S-103", "Cristov", "Concio", "ECE", "M", "Malolos, Bulacan"),
+("S-104", "Aris", "Clavio", "COE", "M", "Pulilan, Bulacan"),
+("S-105", "Honey", "Pelayo", "COE", "F", "Plaridel, Bulacan"),
+("S-106", "Carrie", "Abao", "ECE", "F", "Pulilan, Bulacan");
+
+
+INSERT INTO Grades VALUES
+("S-101", "Chem 123", 2.00),
+("S-101", "Math 122", 1.00),
+("S-101", "Math 123", 1.50),
+("S-102", "Chem 123", 1.75),
+("S-102", "Math 122", 1.25),
+("S-102", "Math 123",1.50)
