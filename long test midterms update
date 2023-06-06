@@ -1,0 +1,61 @@
+DROP DATABASE Midterm;
+CREATE DATABASE Midterm;
+USE Midterm;
+
+
+
+CREATE TABLE Student(
+StudNo varchar (15) PRIMARY KEY,
+    StudFName varchar (15),
+    StudLName varchar (15),
+    Major varchar (15),
+    Gender ENUM ('F', 'M'),
+    HomeAddress varchar (15)
+);
+
+CREATE TABLE Subject(
+	SubjectCode varchar (15) Primary Key,
+    SubjectDescr varchar (15)
+);
+
+CREATE TABLE Grades(
+	StudNo varchar (15),
+    SubjectCode varchar(15),
+    Grade int,
+    CONSTRAINT GradesFK FOREIGN KEY (StudNo) REFERENCES Student (StudNo),
+    FOREIGN KEY (SubjectCode) REFERENCES Subject (SubjectCode)
+);
+
+
+INSERT INTO Student VALUES
+("S-101", "Ana", "Cruz","ECE", "F", "Malolos, Bulacan"),
+("S-102", "Hazel", "Ponce", "COE", "F", "Plaridel, Bataan"),
+("S-103", "Cristov", "Concio", "ECE", "M", "Malolos, Bulacan"),
+("S-104", "Aris", "Clavio", "COE", "M", "Pulilan, Bulacan"),
+("S-105", "Honey", "Pelayo", "COE", "F", "Plaridel, Bulacan"),
+("S-106", "Carrie", "Abao", "ECE", "F", "Pulilan, Bulacan");
+
+INSERT INTO Subject VALUES
+("Chem 123", "Chemistry"),
+("Math 122", "Trigonometry"),
+("Math 123", "Algebra");
+
+INSERT INTO Grades VALUES
+("S-101", "Chem 123", 2.00),
+("S-101", "Math 122", 1.00),
+("S-101", "Math 123", 1.50),
+("S-102", "Chem 123", 1.75),
+("S-102", "Math 122", 1.25),
+("S-102", "Math 123",1.50),
+("S-103", "Chem 123", 2.00),
+("S-103", "Math 122", 1.75),
+("S-103", "Math 123", 1.25),
+("S-104", "Chem 123", 1.25),
+("S-104", "Math 122", 2.25),
+("S-104", "Math 123", 2.50),
+("S-105", "Chem 123", 1.00),
+("S-105", "Math 122", 1.25),
+("S-105", "Math 123", 1.50),
+("S-106", "Chem 123", 1.25),
+("S-106", "Math 122", 1.50),
+("S-106", "Math 123", 1.75);
